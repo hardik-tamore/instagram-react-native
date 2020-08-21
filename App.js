@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
 import Navbar from "./assets/Navbar";
 import { Avatar } from "react-native-paper";
 import Post from "./assets/Post";
+import ImagePickerExample from "./assets/imagePicker";
 
 export default function App() {
   const [post, setPost] = useState([
@@ -44,6 +45,7 @@ export default function App() {
       },
     },
   ]);
+
   const postList = post.map((post) => {
     return (
       <Post
@@ -58,7 +60,10 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Navbar />
-      <ScrollView>{postList}</ScrollView>
+      <ScrollView>
+        {postList}
+        <ImagePickerExample />
+      </ScrollView>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
